@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Home() {
@@ -7,20 +8,20 @@ export default function Home() {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-base font-semibold tracking-wider text-blue-600 uppercase">
-              A social media for learners
+            <p className="text-base font-semibold tracking-wider text-blue-600 uppercase relative z-10">
+              Discover Your Power: BuildYourBeast
             </p>
             <h1 className="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-8xl">
-              Connect & learn from the experts
+              Welcome to BuildYourBeast
             </h1>
             <p className="mt-4 text-base text-black lg:mt-8 sm:text-xl">
-              Grow your career fast with right mentor.
+              At BuildYourBeast, we fuel your PC building passion.
             </p>
 
             <a
               href="#"
               title=""
-              className="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400"
+              className="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-6 hover:bg-yellow-400 focus:bg-yellow-400"
               role="button"
             >
               Join for free
@@ -42,16 +43,23 @@ export default function Home() {
 
             <p className="mt-5 text-gray-600">
               Already joined us?{" "}
-              <a
-                href="#"
-                title=""
+              <Link
+                href="/sign-in"
                 className="text-black transition-all duration-200 hover:underline"
               >
-                Log in
-              </a>
+                Sign In
+              </Link>
             </p>
           </div>
-
+          <div className="w-full object-cover relative z-0">
+            <Image
+              className="w-full h-full"
+              width={1900}
+              height={1900}
+              src="https://i.ibb.co/4dFSnj6/Background.png"
+              alt="PC Components picture"
+            />
+          </div>
         </div>
       </div>
     </section>
