@@ -18,7 +18,14 @@ export default function SignIn() {
                 <div className="space-y-5">
                   <div>
                     <div className="mt-2.5 relative text-gray-400 focus-within:text-gray-600">
-                      <button className="block w-full py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600">
+                      <button
+                        onClick={() =>
+                          signIn("google", {
+                            callbackUrl: "http://localhost:3000/",
+                          })
+                        }
+                        className="block w-full py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                      >
                         Google
                       </button>
                     </div>
@@ -27,7 +34,11 @@ export default function SignIn() {
                   <div>
                     <div className=" mt-2.5 relative text-gray-400 focus-within:text-gray-600">
                       <button
-                        onClick={() => signIn("github")}
+                        onClick={() =>
+                          signIn("github", {
+                            callbackUrl: "http://localhost:3000/",
+                          })
+                        }
                         className="block w-full py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                       >
                         GitHub
