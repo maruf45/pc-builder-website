@@ -11,6 +11,7 @@ const nextConfig = {
       "www.techlandbd.com",
       "creatuscomputer.com",
       "m.media-amazon.com",
+      'i.pcmag.com'
     ],
   },
 };

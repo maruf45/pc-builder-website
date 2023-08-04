@@ -8,27 +8,27 @@ export default function Navbar() {
   const routes = [
     {
       name: "CPU",
-      route: "/processors",
+      route: "/Processors",
     },
     {
       name: "Motherboard",
-      route: "/motherboards",
+      route: "/Motherboards",
     },
     {
       name: "RAM",
-      route: "/memory",
+      route: "/Memory",
     },
     {
       name: "Power Supply Unit",
-      route: "/psu",
+      route: "/Power Supplies",
     },
     {
       name: "Storage Device",
-      route: "/storage",
+      route: "/Storage",
     },
     {
       name: "Monitor",
-      route: "/monitors",
+      route: "/Monitors",
     },
   ];
 
@@ -129,7 +129,7 @@ export default function Navbar() {
                           <>
                             <li>
                               <Link
-                                href={`categories/${route.route}`}
+                                href={`/categories/${route.route}`}
                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 {route.name}
