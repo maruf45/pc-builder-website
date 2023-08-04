@@ -20,7 +20,7 @@ export default function AllCart({ allProducts }) {
           {allProducts?.slice(0, 6).map((allProduct) => {
             return (
               <>
-                <Cart allProduct={allProduct} />
+                <Cart allProduct={allProduct} key={allProduct._id} />
               </>
             );
           })}

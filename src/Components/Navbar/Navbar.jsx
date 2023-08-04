@@ -5,11 +5,9 @@ import React from "react";
 
 export default function Navbar() {
   const { data } = useSession();
+
   return (
     <div>
-      <Head>
-        <title>Sign In | BuildYourBeast </title>
-      </Head>
       <div className="bg-white">
         <header className=" bg-opacity-30">
           <div className="px-4 mx-auto sm:px-6 lg:px-8">
@@ -61,19 +59,16 @@ export default function Navbar() {
                   title=""
                   className="text-base text-black transition-all duration-200 hover:text-opacity-80"
                 >
-                  {" "}
-                  Features{" "}
+                  Home
                 </a>
 
                 <a
                   href="#"
                   title=""
-                  className="text-base text-black transition-all duration-200 hover:text-opacity-80"
+                  className="text-base text-black transition-all duration-200 hover:text-opacity-80 relative"
                 >
-                  {" "}
-                  Solutions{" "}
+                  Categories
                 </a>
-
                 <a
                   href="#"
                   title=""

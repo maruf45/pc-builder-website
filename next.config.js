@@ -7,9 +7,10 @@ const nextConfig = {
       "cdn.gaminggorilla.com",
       "encrypted-tbn0.gstatic.com",
       "www.cloud.ryanscomputers.com",
-      'image.made-in-china.com',
-      'www.techlandbd.com',
-      'creatuscomputer.com',
+      "image.made-in-china.com",
+      "www.techlandbd.com",
+      "creatuscomputer.com",
+      "m.media-amazon.com",
     ],
   },
 };
