@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <section className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
+    <section className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24 h-screen">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
@@ -51,7 +51,7 @@ export default function Home() {
               </Link>
             </p>
           </div>
-          <div className="w-full object-cover relative z-0">
+          <div className="w-full object-cover ml-20">
             <Image
               className="w-full h-full"
               width={1900}
