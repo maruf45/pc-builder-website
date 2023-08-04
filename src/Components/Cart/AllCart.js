@@ -17,7 +17,7 @@ export default function AllCart({ allProducts }) {
         </div>
 
         <div class="grid grid-cols-1 gap-6 mt-12 lg:mt-16 xl:gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {allProducts?.products?.slice(0, 6).map((allProduct) => {
+          {allProducts?.slice(0, 6).map((allProduct) => {
             return (
               <>
                 <Cart allProduct={allProduct} />
