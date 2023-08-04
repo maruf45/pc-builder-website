@@ -1,10 +1,36 @@
 import { signOut, useSession } from "next-auth/react";
-import Head from "next/head";
+import "flowbite";
 import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
   const { data } = useSession();
+  const routes = [
+    {
+      name: "CPU",
+      route: "/processors",
+    },
+    {
+      name: "Motherboard",
+      route: "/motherboards",
+    },
+    {
+      name: "RAM",
+      route: "/memory",
+    },
+    {
+      name: "Power Supply Unit",
+      route: "/psu",
+    },
+    {
+      name: "Storage Device",
+      route: "/storage",
+    },
+    {
+      name: "Monitor",
+      route: "/monitors",
+    },
+  ];
 
   return (
     <div>
@@ -62,13 +88,59 @@ export default function Navbar() {
                   Home
                 </a>
 
-                <a
-                  href="#"
-                  title=""
-                  className="text-base text-black transition-all duration-200 hover:text-opacity-80 relative"
+                <div
+                  id="dropdownDelayButton"
+                  data-dropdown-toggle="dropdownDelay"
+                  data-dropdown-delay="500"
+                  data-dropdown-trigger="hover"
+                  className="flex items-center"
                 >
-                  Categories
-                </a>
+                  <a
+                    href="#"
+                    className="text-base text-black transition-all duration-200 hover:text-opacity-80 relative"
+                  >
+                    Categories
+                  </a>
+                  <svg
+                    class="w-2.5 h-2.5 ml-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 6"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 4 4 4-4"
+                    />
+                  </svg>
+                  <div
+                    id="dropdownDelay"
+                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                  >
+                    <ul
+                      class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                      aria-labelledby="dropdownDelayButton"
+                    >
+                      {routes.map((route) => {
+                        return (
+                          <>
+                            <li>
+                              <Link
+                                href={`categories/${route.route}`}
+                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              >
+                                {route.name}
+                              </Link>
+                            </li>
+                          </>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
                 <a
                   href="#"
                   title=""

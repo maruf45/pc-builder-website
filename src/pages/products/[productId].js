@@ -11,7 +11,6 @@ export default function ProductDetailPage({ productDetails }) {
     description,
     category,
     averageRating,
-    individualRating,
     keyFeatures,
     reviews,
   } = productDetails;
