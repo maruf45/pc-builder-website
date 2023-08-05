@@ -1,4 +1,5 @@
 import Review from "@/Components/ProductDetail/Review";
+import Head from "next/head";
 import Image from "next/image";
 import React from "react";
 
@@ -18,7 +19,10 @@ export default function ProductDetailPage({ productDetails }) {
   let keyFeaturesValues = Object.values(keyFeatures);
 
   return (
-    <>
+    <div>
+      <Head>
+        <title>{category} Product</title>
+      </Head>
       <section class="text-gray-700 body-font overflow-hidden bg-white">
         <div class="container px-5 py-24 mx-auto">
           <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -82,7 +86,7 @@ export default function ProductDetailPage({ productDetails }) {
         </div>
       </section>
       <Review reviews={reviews} averageRating={averageRating} />
-    </>
+    </div>
   );
 }
 

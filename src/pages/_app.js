@@ -8,8 +8,8 @@ export default function MyApp({ Component, pageProps }) {
   return getLayout(
     <SessionProvider session={pageProps.session}>
       <Navbar/>
-      {/* <Footer/> */}
       <Component {...pageProps} />
+      <Footer/>
     </SessionProvider>
   );
 }

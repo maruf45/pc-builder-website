@@ -80,13 +80,13 @@ export default function Navbar() {
               </button>
 
               <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
-                <a
-                  href="#"
-                  title=""
+                <Link
+                  href="/"
+                  title="Home"
                   className="text-base text-black transition-all duration-200 hover:text-opacity-80"
                 >
                   Home
-                </a>
+                </Link>
 
                 <div
                   id="dropdownDelayButton"
@@ -141,23 +141,13 @@ export default function Navbar() {
                     </ul>
                   </div>
                 </div>
-                <a
+                <Link
                   href="#"
                   title=""
                   className="text-base text-black transition-all duration-200 hover:text-opacity-80"
                 >
-                  {" "}
-                  Resources{" "}
-                </a>
-
-                <a
-                  href="#"
-                  title=""
-                  className="text-base text-black transition-all duration-200 hover:text-opacity-80"
-                >
-                  {" "}
-                  Pricing{" "}
-                </a>
+                  PC Builder Page
+                </Link>
               </div>
 
               {data?.user?.email ? (
@@ -178,6 +168,7 @@ export default function Navbar() {
               )}
             </div>
           </div>
+
         </header>
       </div>
     </div>
