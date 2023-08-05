@@ -18,13 +18,13 @@ export default function Home() {
               At BuildYourBeast, we fuel your PC building passion.
             </p>
 
-            <a
-              href="#"
+            <Link
+              href="/categories/all-components"
               title=""
               className="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-6 hover:bg-yellow-400 focus:bg-yellow-400"
               role="button"
             >
-              Join for free
+              Lets Build PC
               <svg
                 className="w-6 h-6 ml-8 -mr-2"
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ export default function Home() {
                   d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-            </a>
+            </Link>
 
             <p className="mt-5 text-gray-600">
               Already joined us?{" "}

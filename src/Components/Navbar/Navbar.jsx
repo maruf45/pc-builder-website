@@ -95,12 +95,12 @@ export default function Navbar() {
                   data-dropdown-trigger="hover"
                   className="flex items-center"
                 >
-                  <a
-                    href="#"
+                  <Link
+                    href="/categories/all-components"
                     className="text-base text-black transition-all duration-200 hover:text-opacity-80 relative"
                   >
-                    Categories
-                  </a>
+                    Components
+                  </Link>
                   <svg
                     class="w-2.5 h-2.5 ml-2.5"
                     aria-hidden="true"
@@ -146,7 +146,7 @@ export default function Navbar() {
                   title=""
                   className="text-base text-black transition-all duration-200 hover:text-opacity-80"
                 >
-                  PC Builder Page
+                  PC Builder
                 </Link>
               </div>
 
@@ -168,7 +168,6 @@ export default function Navbar() {
               )}
             </div>
           </div>
-
         </header>
       </div>
     </div>

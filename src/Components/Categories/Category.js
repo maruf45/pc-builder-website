@@ -7,9 +7,9 @@ export default function Category({ categories }) {
     categories;
   return (
     <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
-      <a
+      <Link
         class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
-        href="#"
+        href={`/products/${_id}`}
       >
         <Image
           width={500}
@@ -18,24 +18,20 @@ export default function Category({ categories }) {
           src={image}
           alt="product image"
         />
-      </a>
-      <div class="mt-4 px-5 pb-5">
-        <Link href="/product/1">
+      </Link>
+      <div class="mt-5 px-5 pb-5">
+        <Link href={`/products/${_id}`}>
           <h5 class="text-xl tracking-tight text-slate-900 font-bold mb-3">
             {productName}
           </h5>
         </Link>
 
-        <p>
-          <span class="text-lg font-normal py-9 text-slate-900">
-            Category: {category}
-          </span>
+        <p class="text-lg pb-2 font-normal text-slate-900">
+          Category: {category}
         </p>
-        <p>
-          <span class="text-lg  font-normal py-9 text-slate-900">
-            Status: {status}
-          </span>
-        </p>
+
+        <p class="text-lg  font-normal text-slate-900">Status: {status}</p>
+
         <div class="mt-2 mb-5 flex items-center justify-between">
           <p>
             <span class="text-3xl font-bold text-slate-900">${price}</span>
@@ -46,12 +42,9 @@ export default function Category({ categories }) {
             </span>
           </div>
         </div>
-        <Link
-          href={`/products/${_id}`}
-          class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
-        >
-          Detail
-        </Link>
+        <button class="flex w-full justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+          Add To Build
+        </button>
       </div>
     </div>
   );
