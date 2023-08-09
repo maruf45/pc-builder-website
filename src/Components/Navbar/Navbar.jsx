@@ -8,27 +8,27 @@ export default function Navbar() {
   const routes = [
     {
       name: "CPU",
-      route: "/Processors",
+      route: "Processors",
     },
     {
       name: "Motherboard",
-      route: "/Motherboards",
+      route: "Motherboards",
     },
     {
       name: "RAM",
-      route: "/Memory",
+      route: "Memory",
     },
     {
       name: "Power Supply Unit",
-      route: "/Power Supplies",
+      route: "Power Supplies",
     },
     {
       name: "Storage Device",
-      route: "/Storage",
+      route: "Storage",
     },
     {
       name: "Monitor",
-      route: "/Monitors",
+      route: "Monitors",
     },
   ];
 
@@ -57,8 +57,8 @@ export default function Navbar() {
                 >
                   <path
                     strokeLinecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 8h16M4 16h16"
                   ></path>
                 </svg>
@@ -72,8 +72,8 @@ export default function Navbar() {
                 >
                   <path
                     strokeLinecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   ></path>
                 </svg>
@@ -96,13 +96,13 @@ export default function Navbar() {
                   className="flex items-center"
                 >
                   <Link
-                    href="/categories/all-components"
+                    href="categories/all-components"
                     className="text-base text-black transition-all duration-200 hover:text-opacity-80 relative"
                   >
-                    Components
+                    Categories
                   </Link>
                   <svg
-                    class="w-2.5 h-2.5 ml-2.5"
+                    className="w-2.5 h-2.5 ml-2.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -110,27 +110,27 @@ export default function Navbar() {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="m1 1 4 4 4-4"
                     />
                   </svg>
                   <div
                     id="dropdownDelay"
-                    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                    className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
                   >
                     <ul
-                      class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                      className="py-2 text-sm text-gray-700 dark:text-gray-200"
                       aria-labelledby="dropdownDelayButton"
                     >
                       {routes.map((route) => {
                         return (
                           <>
-                            <li>
+                            <li key={route.route}>
                               <Link
                                 href={`/categories/${route.route}`}
-                                class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                               >
                                 {route.name}
                               </Link>
@@ -152,7 +152,7 @@ export default function Navbar() {
 
               {data?.user?.email ? (
                 <button
-                  href="/sign-in"
+                  href="sign-in"
                   className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-white bg-black rounded-full"
                   onClick={() => signOut()}
                 >
@@ -160,7 +160,7 @@ export default function Navbar() {
                 </button>
               ) : (
                 <Link
-                  href="/sign-in"
+                  href="sign-in"
                   className="hidden lg:inline-flex items-center justify-center px-5 py-2.5 text-base transition-all duration-200 hover:bg-yellow-300 hover:text-black focus:text-black focus:bg-yellow-300 font-semibold text-white bg-black rounded-full"
                 >
                   Sign In
