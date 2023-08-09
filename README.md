@@ -1,39 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
 
+# BuildYourBeast
+
+At BuildYourBeast, we fuel your PC building passion.
+
+![App Screenshot](https://i.ibb.co/dJxzVjy/Screenshot-from-2023-08-09-14-57-06.png)
+
+## Description
+
+At BuildYourBeast, we fuel your PC building passion. Our handpicked collection of cutting-edge PC components caters to all enthusiasts, from novices to seasoned builders. Explore a wide range of high-performance CPUs, powerful GPUs, feature-rich motherboards, and more, meticulously chosen to amplify your computing experience. With real-time price tracking, expert guides, and an intuitive interface, creating your ultimate PC configuration is a breeze. Unleash your creativity and embark on an extraordinary journey with BuildYourBeast. Let's build the beast that defines you!
+
+
+
+### Dependencies
+* [reduxjs/toolkit]()
+* [autoprefixer]()
+* [eslint]()
+* [flowbite]()
+* [flowbite-react]()
+* [lucide-react]()
+* [next-auth]()
+* [postcss]()
+* [react]()
+* [react-dom]()
+* [react-redux]()
+* [react-toastify]()
+* [tailwindcss]()
+
+### Installing
+First clone this repository and open terminal
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone https://github.com/maruf45/pc-builder-website
+  cd pc-builder-website
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Executing program
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+ npm install
+ npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Help
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
 
-## Learn More
+## Authors
 
-To learn more about Next.js, take a look at the following resources:
+Contributors names and contact info
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Maruf Rahman
+ex. [@github](https://github.com/maruf45/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# pc-builder-website

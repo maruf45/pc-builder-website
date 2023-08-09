@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 
 export default function OrderSummary() {
@@ -97,9 +99,16 @@ export default function OrderSummary() {
                 </div>
               </div>
               <div className="w-full flex justify-center items-center">
-                <button disabled={pcComponents ? pcComponents.length < 5: disabled} className="disabled:cursor-not-allowed disabled:opacity-70 hover:bg-black dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white">
+                <button
+                  disabled={pcComponents ? pcComponents.length < 5 : disabled}
+                  className="disabled:cursor-not-allowed disabled:opacity-70 hover:bg-black dark:bg-white dark:text-gray-800 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 py-5 w-96 md:w-full bg-gray-800 text-base font-medium leading-4 text-white"
+                  onClick={() =>
+                    toast.success("Lest go dude you build awesome!")
+                  }
+                >
                   Complete Build
                 </button>
+                <ToastContainer />
               </div>
             </div>
           </div>
