@@ -12,7 +12,6 @@ const pcBuilderSlice = createSlice({
     },
   },
 });
-console.log(initialState, "things");
 
 export const { addPcComponents } = pcBuilderSlice.actions;
 

@@ -34,7 +34,6 @@ export const getServerSideProps = async (context) => {
         `https://buildyourbeast-backend.vercel.app/categories/${params.pcbuilder}`
       );
       const data = await res.json();
-      console.log(params);
     return{
         props: {
             pcBuilder: data
