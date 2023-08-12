@@ -1,4 +1,5 @@
 import Review from "@/Components/ProductDetail/Review";
+import { addPcComponents } from "@/redux/PCBuilder/pcBuilderSlice";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -6,8 +7,8 @@ import { useDispatch } from "react-redux";
 
 export default function ProductDetailPage({ productDetails }) {
   const dispatch = useDispatch();
-  let keyFeaturesKeys = Object.keys(productDetails?.keyFeatures);
-  let keyFeaturesValues = Object.values(productDetails?.keyFeatures);
+  // let keyFeaturesKeys = Object.keys(productDetails?.keyFeatures);
+  // let keyFeaturesValues = Object.values(productDetails?.keyFeatures);
   return (
     <div>
       <Head>
@@ -32,7 +33,9 @@ export default function ProductDetailPage({ productDetails }) {
               </h1>
               <div className="flex mb-4">
                 <span className="flex items-center">
-                  <span className="text-gray-600">Reviews: {productDetails?.reviews.length}</span>
+                  <span className="text-gray-600">
+                    Reviews: {productDetails?.reviews.length}
+                  </span>
                 </span>
 
                 <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
@@ -43,23 +46,19 @@ export default function ProductDetailPage({ productDetails }) {
               <p className="mt-3 font-bold text-lg">Specification </p>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                 <div>
-                  {keyFeaturesKeys.map((keys) => {
-                    return (
-                      <>
-                        <p>{keys}: </p>
-                      </>
-                    );
-                  })}
+                  {productDetails?.keyFeatures &&
+                    Object.keys(productDetails.keyFeatures).map((key) => (
+                      <p key={key}>
+                        {key}: {productDetails.keyFeatures[key]}
+                      </p>
+                    ))}
                 </div>
                 <div className="flex ml-6 items-center">
                   <div>
-                    {keyFeaturesValues.map((keys) => {
-                      return (
-                        <>
-                          <p>{keys}</p>
-                        </>
-                      );
-                    })}
+                    {productDetails?.keyFeatures &&
+                      Object.values(productDetails.keyFeatures).map((value) => (
+                        <p key={value}>{value}</p>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -67,7 +66,10 @@ export default function ProductDetailPage({ productDetails }) {
                 <span className="title-font font-medium text-2xl text-gray-900">
                   ${productDetails?.price}
                 </span>
-                <button onClick={() =>  dispatch(addPcComponents(productDetails))} className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
+                <button
+                  onClick={() => dispatch(addPcComponents(productDetails))}
+                  className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded"
+                >
                   Add To Builder
                 </button>
               </div>
@@ -75,13 +77,20 @@ export default function ProductDetailPage({ productDetails }) {
           </div>
         </div>
       </section>
-      <Review reviews={productDetails?.reviews} averageRating={productDetails?.averageRating} />
+      {productDetails?.reviews && (
+        <Review
+          reviews={productDetails.reviews}
+          averageRating={productDetails.averageRating}
+        />
+      )}
     </div>
   );
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://buildyourbeast-backend.vercel.app/all-pc-components/");
+  const res = await fetch(
+    "https://buildyourbeast-backend.vercel.app/all-pc-components/"
+  );
   const data = await res.json();
   const paths = data?.map((product) => ({
     params: { productId: product._id },
@@ -99,5 +108,6 @@ export const getStaticProps = async (context) => {
     props: {
       productDetails: data,
     },
+    revalidate: 10,
   };
 };
