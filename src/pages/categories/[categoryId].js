@@ -7,7 +7,7 @@ export default function Categories({ product }) {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">
-            Our Featured {product[0]?.category}
+            Our Featured Products
           </h2>
           <p className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600">
             BuildYourBeast offers a wide array of cutting-edge PC components
