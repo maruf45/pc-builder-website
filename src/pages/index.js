@@ -19,7 +19,7 @@ export default function Index({ allProducts }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("http://localhost:5000/all-pc-components");
+  const res = await fetch("https://buildyourbeast-backend.vercel.app/all-pc-components");
   const data = await res.json();
   return {
     props: {

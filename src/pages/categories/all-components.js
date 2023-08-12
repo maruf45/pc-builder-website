@@ -13,7 +13,7 @@ export default function AllComponent({ product }) {
   );
 }
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:5000/all-categories`);
+  const res = await fetch(`https://buildyourbeast-backend.vercel.app/all-categories`);
   const data = await res.json();
   return {
     props: {

@@ -30,7 +30,7 @@ export default function Categories({ product }) {
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/all-pc-components/");
+  const res = await fetch("https://buildyourbeast-backend.vercel.app/all-pc-components/");
   const data = await res.json();
   const paths = data?.map((category) => ({
     params: { categoryId: category.category },
@@ -41,7 +41,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/featured/${params.categoryId}`
+    `https://buildyourbeast-backend.vercel.app/featured/${params.categoryId}`
   );
   const data = await res.json();
   return {

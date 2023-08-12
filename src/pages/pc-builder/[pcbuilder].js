@@ -31,7 +31,7 @@ export default function PcBuilderComponents({pcBuilder}) {
 export const getServerSideProps = async (context) => {
     const {params} = context;
     const res = await fetch(
-        `http://localhost:5000/categories/${params.pcbuilder}`
+        `https://buildyourbeast-backend.vercel.app/categories/${params.pcbuilder}`
       );
       const data = await res.json();
       console.log(params);

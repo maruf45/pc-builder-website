@@ -91,7 +91,7 @@ export default function ProductDetailPage({ productDetails }) {
 }
 
 export const getStaticPaths = async () => {
-  const res = await fetch("http://localhost:5000/all-pc-components/");
+  const res = await fetch("https://buildyourbeast-backend.vercel.app/all-pc-components/");
   const data = await res.json();
   const paths = data?.map((product) => ({
     params: { productId: product._id },
@@ -102,7 +102,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `http://localhost:5000/all-pc-components/${params.productId}`
+    `https://buildyourbeast-backend.vercel.app/all-pc-components/${params.productId}`
   );
   const data = await res.json();
   return {
